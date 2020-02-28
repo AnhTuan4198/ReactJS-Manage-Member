@@ -1,0 +1,98 @@
+$mainColor:rgb(236, 236, 236);
+$addBtnColor:rgba(7, 109, 150, 0.932);
+$closeBtnColor:rgb(131, 131, 131);
+$btn-border:rgb(12, 183, 250);
+
+.AddMember-container{
+    margin:0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50vh;
+    width: 15%;
+    min-width: 200px;
+    min-height: 150px;
+    //border:solid 1px red;
+    .show-close-btns{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        height: 10%;
+        .btn{
+            height: 25px;
+            width: 100%;
+            border-radius:2px;
+            //box-shadow: 1px 1px 1px gray;
+            border: 1px solid $mainColor;
+        }
+        .showform-btn{
+            position: absolute;
+            top:0;left:50%;
+            transform: translate(-50%,0);
+            z-index: 1;
+            color: gray;
+            background-color: white;
+            border: 2px solid $addBtnColor;
+            &:hover{
+                background-color:$addBtnColor ;
+                color:white;
+                font-weight: 200;
+            }
+        }.closeform-btn{
+            position: absolute;
+            top:0;left:50%;
+            transform: translate(-50%,0%);
+            z-index: 2;
+            color: gray;
+            background-color: white;
+            border: 1px solid $closeBtnColor;
+            &:hover{
+                background-color:$closeBtnColor;
+                color:white;
+                font-weight: 200;
+            }
+        }
+    }
+    .AddMember-form{
+        margin-bottom:10%;
+        border:solid 2px$btn-border;
+        display: flex;
+        flex-direction: column;
+        height: 90%;
+        border-radius:3px;
+        
+        .AddMember-header{
+            height: 15%;
+            border-top-left-radius:3px;
+            border-top-right-radius:3px;
+            background-color: $mainColor;
+            border-bottom:1px solid darkgray;
+            font-weight: 400;
+            text-align: center;
+            p{
+                margin:10px;
+            }
+        }
+        form{
+            display:  flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 80% ;
+            align-items: center;
+            input, select{
+                height: 30px;
+                width: 80%;
+            }
+            .submit-btn{
+                width: 100px;
+                height: 30px;
+                background-color: $btn-border;
+                border-radius: 5px;
+                border: none;
+                color: rgb(255, 255, 255);
+                font-weight: 300;
+                font-size: 17px;
+            }
+        }
+    }
+}

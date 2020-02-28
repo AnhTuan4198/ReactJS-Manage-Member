@@ -1,0 +1,133 @@
+.AddMember-container {
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 50vh;
+  width: 15%;
+  min-width: 200px;
+  min-height: 150px;
+}
+
+.AddMember-container .show-close-btns {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 10%;
+}
+
+.AddMember-container .show-close-btns .btn {
+  height: 25px;
+  width: 100%;
+  border-radius: 2px;
+  border: 1px solid #ececec;
+}
+
+.AddMember-container .show-close-btns .showform-btn {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  z-index: 1;
+  color: gray;
+  background-color: white;
+  border: 2px solid rgba(7, 109, 150, 0.932);
+}
+
+.AddMember-container .show-close-btns .showform-btn:hover {
+  background-color: rgba(7, 109, 150, 0.932);
+  color: white;
+  font-weight: 200;
+}
+
+.AddMember-container .show-close-btns .closeform-btn {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+  z-index: 2;
+  color: gray;
+  background-color: white;
+  border: 1px solid #838383;
+}
+
+.AddMember-container .show-close-btns .closeform-btn:hover {
+  background-color: #838383;
+  color: white;
+  font-weight: 200;
+}
+
+.AddMember-container .AddMember-form {
+  margin-bottom: 10%;
+  border: solid 2px #0cb7fa;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 90%;
+  border-radius: 3px;
+}
+
+.AddMember-container .AddMember-form .AddMember-header {
+  height: 15%;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  background-color: #ececec;
+  border-bottom: 1px solid darkgray;
+  font-weight: 400;
+  text-align: center;
+}
+
+.AddMember-container .AddMember-form .AddMember-header p {
+  margin: 10px;
+}
+
+.AddMember-container .AddMember-form form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 80%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.AddMember-container .AddMember-form form input, .AddMember-container .AddMember-form form select {
+  height: 30px;
+  width: 80%;
+}
+
+.AddMember-container .AddMember-form form .submit-btn {
+  width: 100px;
+  height: 30px;
+  background-color: #0cb7fa;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-weight: 300;
+  font-size: 17px;
+}
+/*# sourceMappingURL=addMember.css.map */

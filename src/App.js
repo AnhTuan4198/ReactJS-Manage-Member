@@ -1,26 +1,110 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import SearchBox from './Component/search';
+import AddMember from './Component/addMember';
+import MemberList from './Component/memberList';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import EditMember from './Component/editMember'
 
-function App() {
-  return (
+
+class App extends Component{
+  constructor(props){
+    super(props)
+    this.state = {
+      members: [
+        {
+          stt: 0,
+          name: " Nguyen Minh Dang",
+          id: "1753332",
+          tel: "092301156",
+          function: 1
+        },
+        {
+          stt: 1,
+          name: " Ngo Duc Tuan",
+          id: "1753111",
+          tel: "0923010233",
+          function: 2
+        },
+        {
+          stt: 2,
+          name: " Nguyen Ngoc Anh Tuan",
+          id: "1753592",
+          tel: "0923011562",
+          function: 3
+        }
+      ],
+      editMember:{},
+      showEditForm:false,
+      nextStt: 3,
+      searchKey: ""
+    };
+    this.handleAddNewMember=this.handleAddNewMember.bind(this);
+    this.handleSearching=this.handleSearching.bind(this);
+    this.getEditMember=this.getEditMember.bind(this);
+    this.saveEditMember=this.saveEditMember.bind(this);
+    this.handleDelete=this.handleDelete.bind(this);
+  }
+ 
+  handleAddNewMember(obj){
+    this.setState((preState,props)=>{
+      const newMember={...obj,stt:this.state.nextStt};
+      console.log(newMember);
+       return {
+          nextStt:preState+1,
+          members:[...this.state.members,newMember]
+       }
+    })
+  }
+
+  handleSearching(keyWord){
+    //console.log(`we get  ${keyWord}`);
+    this.setState({searchKey:keyWord})
+    let members=[...this.state.members];
+  }
+  getEditMember(mem){
+    const editMember={...mem}
+    this.setState({ editMember: editMember, showEditForm: !this.state.showEditForm });
+  }
+  saveEditMember(editedMember){
+    //alert('get information back success')
+    let editedMem=[...this.state.members];
+    //console.log(editedMember)
+    editedMem.map((mem)=>{
+      if(mem.stt === editedMember.stt){
+        mem.name=editedMember.name;
+        mem.tel = editedMember.tel;
+        mem.function = editedMember.function;
+        mem.id=editedMember.id;
+      }
+    })
+    this.setState({members:editedMem,showEditForm:!this.state.showEditForm})
+  }
+
+  handleDelete(stt){
+    const mem=this.state.members.filter(mem=>mem.stt !== stt)
+    this.setState({members:[...mem]})
+  }
+  render(){
+    //console.log(this.state.editMember)
+    //console.log(this.state)
+    return(
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>PROJECT MANAGE MEMBER WITH JSON</h1>
+        <br></br>
       </header>
-    </div>
-  );
+      <div className ='App-body'>
+        <SearchBox  getInputSearch={this.handleSearching}/>
+        <div className='Main'>
+          {this.state.showEditForm?<EditMember editMember={this.state.editMember} save={this.saveEditMember} /> :null}
+          <MemberList members={this.state.members} getEditMember={this.getEditMember}
+          deleteFunction={this.handleDelete}/>          
+          <AddMember AddNewMember={this.handleAddNewMember}/>
+        </div>
+      </div>
+    </div>)
+  }
 }
 
 export default App;

@@ -1,0 +1,37 @@
+tr td .Member-Modify {
+  width: 10vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: auto;
+}
+
+tr td .Member-Modify .Member-Modify-edit-btn {
+  padding: 5px;
+  width: 55px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: #fa7a31;
+  height: 25px;
+  padding-top: 5px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+tr td .Member-Modify .Member-Modify-delete-btn {
+  padding: 5px;
+  width: 55px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  height: 25px;
+  padding-top: 5px;
+  font-weight: 600;
+  color: white;
+  background-color: #f81d1d;
+  cursor: pointer;
+}
+/*# sourceMappingURL=member.css.map */

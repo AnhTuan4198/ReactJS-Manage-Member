@@ -1,5 +1,12 @@
+body{
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
 .App {
   text-align: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 .App-logo {
@@ -36,3 +43,17 @@
     transform: rotate(360deg);
   }
 }
+
+
+.App .Main{
+  display: flex;
+  margin:auto;
+  justify-content:space-around;
+  width: 100vw;
+  margin:20px 0;
+}
+
+.App .App-body{
+  height: 100vh;
+}
+

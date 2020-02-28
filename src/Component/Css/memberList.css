@@ -1,0 +1,24 @@
+.MemberList {
+  border-collapse: collapse;
+  width: 70%;
+}
+
+.MemberList thead {
+  background-color: rgba(189, 189, 189, 0.377);
+  border-top: 1px solid rgba(189, 189, 189, 0.377);
+  border-bottom: 1px solid rgba(189, 189, 189, 0.377);
+}
+
+.MemberList thead tr {
+  height: 52px;
+}
+
+.MemberList tbody tr {
+  height: 52px;
+  border-bottom: 1px solid rgba(189, 189, 189, 0.377);
+}
+
+.MemberList tbody tr:nth-of-type(even) {
+  background-color: rgba(189, 189, 189, 0.377);
+}
+/*# sourceMappingURL=memberList.css.map */

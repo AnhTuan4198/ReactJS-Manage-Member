@@ -1,0 +1,25 @@
+$tableColor:rgba(189, 189, 189, 0.377);
+
+.MemberList{
+    //border: 1px solid red;
+    border-collapse: collapse;
+    width:70%;
+    thead{
+        //border: 1px solid red;
+        background-color: $tableColor;
+        border-top:1px solid $tableColor;
+        border-bottom: 1px solid $tableColor;
+        tr{
+            height: 52px;
+        }
+    }
+    tbody{
+        tr{
+            height: 52px;
+            border-bottom: 1px solid $tableColor;
+            &:nth-of-type(even){
+                background-color:$tableColor ;
+            }
+        }
+    }
+}
