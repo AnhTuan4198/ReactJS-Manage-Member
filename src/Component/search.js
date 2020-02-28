@@ -1,5 +1,7 @@
 import React,{Component} from 'react';
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faSearch} from "@fortawesome/free-solid-svg-icons";
+import './Css/searchBox.css'
 
 export default class SearchBox extends Component{
     constructor(props) {
@@ -20,13 +22,13 @@ export default class SearchBox extends Component{
         //console.log(this.state)
         return(
         <div className="search-box">
-            <input type='text'
+            <input className='search-text' type='text'
             name='search'
             placeholder='Search member by name'
             onChange={this.getInput}
             >
             </input>
-            <button className='search-btn' onClick={this.pushBackInput} >Search</button>
+            <button className='search-btn' onClick={this.pushBackInput} ><FontAwesomeIcon icon={faSearch}/></button>
         </div>
     )
     }

@@ -1,0 +1,77 @@
+$textColor:rgb(131, 131, 131);
+$mainColor:rgb(255, 181, 21);
+
+.background{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: rgba(128, 128, 128, 0.5);
+    z-index: 100;
+.EditMember-container{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin:0;
+    display: flex;
+    flex-direction:column;
+    width: 20vw;
+    height: 60vh;
+    //border:1px solid red;
+    //padding: 20px;
+    //background: linear-gradient(90deg,rgb(255, 197, 111),rgb(255, 176, 58));
+    .EditMember-form{
+        border: 2.5px solid$mainColor;
+        display: flex;
+        flex-direction: column;
+        height: 90%;
+        border-radius: 5px;
+        .EditMember-header{
+                height: 15%;
+                padding-bottom:10px;
+                background-color: $mainColor;
+                border-bottom:1.5px solid $mainColor;
+                color: white;
+                font-size: 20px;
+        }
+        .EditInput-form{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            background-color: white;
+            input,select,button{
+                width:70%;
+                height: 40px;
+                margin:auto;
+                outline: none;
+                border:1px solid $mainColor;
+                border-radius: 5px;
+                padding-left:10px;
+                color: $textColor;
+
+            }
+            .submit-btn{
+                border:none;
+                outline:none;
+                background-color: $mainColor;
+                color: white;
+                font-size: 16px;
+            }
+        }
+    }
+    .closed-btn{
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        top:5px;
+        left:85%;
+        background-color: inherit;
+        border:none;
+        outline:none;
+        font-size:25px;
+        color:red;
+    }
+}
+}

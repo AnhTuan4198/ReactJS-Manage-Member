@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import './App.css';
+import './Component/Css/App.css'
 import SearchBox from './Component/search';
 import AddMember from './Component/addMember';
 import MemberList from './Component/memberList';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import EditMember from './Component/editMember'
 
 
@@ -44,6 +44,7 @@ class App extends Component{
     this.getEditMember=this.getEditMember.bind(this);
     this.saveEditMember=this.saveEditMember.bind(this);
     this.handleDelete=this.handleDelete.bind(this);
+    this.closedEditForm=this.closedEditForm.bind(this);
   }
  
   handleAddNewMember(obj){
@@ -56,7 +57,9 @@ class App extends Component{
        }
     })
   }
-
+  closedEditForm(){
+    this.setState({showEditForm:!this.state.showEditForm})
+  }
   handleSearching(keyWord){
     //console.log(`we get  ${keyWord}`);
     this.setState({searchKey:keyWord})
@@ -88,22 +91,36 @@ class App extends Component{
   render(){
     //console.log(this.state.editMember)
     //console.log(this.state)
-    return(
-    <div className="App">
-      <header className="App-header">
-        <h1>PROJECT MANAGE MEMBER WITH JSON</h1>
-        <br></br>
-      </header>
-      <div className ='App-body'>
-        <SearchBox  getInputSearch={this.handleSearching}/>
-        <div className='Main'>
-          {this.state.showEditForm?<EditMember editMember={this.state.editMember} save={this.saveEditMember} /> :null}
-          <MemberList members={this.state.members} getEditMember={this.getEditMember}
-          deleteFunction={this.handleDelete}/>          
-          <AddMember AddNewMember={this.handleAddNewMember}/>
+    return (
+      <div className="App">
+        <header className="App-header">
+          <h1>PROJECT MANAGE MEMBER WITH JSON</h1>
+          <br></br>
+        </header>
+        <div className="App-body">
+          {this.state.showEditForm ? (
+            <EditMember
+              className="edit-area"
+              editMember={this.state.editMember}
+              save={this.saveEditMember}
+              closedForm={this.closedEditForm}
+            />
+          ) : null}
+          <SearchBox
+            className="search-area"
+            getInputSearch={this.handleSearching}
+          />
+          <div className="Main">
+            <MemberList
+              members={this.state.members}
+              getEditMember={this.getEditMember}
+              deleteFunction={this.handleDelete}
+            />
+            <AddMember AddNewMember={this.handleAddNewMember} />
+          </div>
         </div>
       </div>
-    </div>)
+    );
   }
 }
 

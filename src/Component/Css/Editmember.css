@@ -1,1 +1,95 @@
-/* No CSS *//*# sourceMappingURL=Editmember.css.map */
+.background {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: rgba(128, 128, 128, 0.5);
+  z-index: 100;
+}
+
+.background .EditMember-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 20vw;
+  height: 60vh;
+}
+
+.background .EditMember-container .EditMember-form {
+  border: 2.5px solid #ffb515;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 90%;
+  border-radius: 5px;
+}
+
+.background .EditMember-container .EditMember-form .EditMember-header {
+  height: 15%;
+  padding-bottom: 10px;
+  background-color: #ffb515;
+  border-bottom: 1.5px solid #ffb515;
+  color: white;
+  font-size: 20px;
+}
+
+.background .EditMember-container .EditMember-form .EditInput-form {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background-color: white;
+}
+
+.background .EditMember-container .EditMember-form .EditInput-form input, .background .EditMember-container .EditMember-form .EditInput-form select, .background .EditMember-container .EditMember-form .EditInput-form button {
+  width: 70%;
+  height: 40px;
+  margin: auto;
+  outline: none;
+  border: 1px solid #ffb515;
+  border-radius: 5px;
+  padding-left: 10px;
+  color: #838383;
+}
+
+.background .EditMember-container .EditMember-form .EditInput-form .submit-btn {
+  border: none;
+  outline: none;
+  background-color: #ffb515;
+  color: white;
+  font-size: 16px;
+}
+
+.background .EditMember-container .closed-btn {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 5px;
+  left: 85%;
+  background-color: inherit;
+  border: none;
+  outline: none;
+  font-size: 25px;
+  color: red;
+}
+/*# sourceMappingURL=Editmember.css.map */
